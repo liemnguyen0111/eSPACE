@@ -1,0 +1,48 @@
+body{  background: rgba(68, 76, 77, 0.671); }
+*
+{
+    box-sizing: border-box;
+    color: rgb(3, 1, 1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+img {
+    /* float:  left; */
+    width:  200px;
+    height: 200px;
+    background-size: cover;
+    /* position: absolute; */
+    float: left;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#myDiv 
+{
+    /* display: grid; */
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+}
+
+#myDiv .myDiv
+{
+    grid-template-columns: 1fr 3fr;
+    background-color: rgba(126, 172, 164, 0.288);
+    border-style: solid;
+    padding: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#myDiv p
+{
+    text-align: left;
+    margin-left: 250px;
+}
+

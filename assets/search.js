@@ -76,29 +76,86 @@ API Endpoints:
 /album/{album_name}
  */
 
+// <script>
+// $(document).on(`click`, event =>
+// {
+//     if(event.target.id === `searchBtn`)
+//   {  
+//     $(`#myDiv`).empty()
+//     //   console.log(event)
+//     //   console.log($(`#inputBox`).text)
+// $.ajax(
+// {
+// url : `https://images-api.nasa.gov/search?q=${$(`#inputBox`).val()}`,
+// method: `GET`,
+// data: {},
+// crossDomain: true,
+// dataType: `html`,
+// beforeSend: function(){
+//     console.log(`Requesting Data...`)
+// }
+// }
+// ).done(function(data)
+// {
+//  process(JSON.parse(data))
+// })
+// }
+// })
 
-fetch(`https://images-api.nasa.gov/search?q=2020`)
-.then(temp => temp.json())
-.then(data => {
 
-    // data.collection.items.forEach(function(user){
-    //     console.log(user.data[0].description
-    //         )})
-    console.log(data.collection.items)
-   
-    // console.log(data.collection.items[0])
-
-//     let info = {
-//         flightNum : data[0].flight_number,
-//         missionName : data[0].mission_name,
-//         flightDetails : data[0].details,
-//     }
-// //    setData(data)
-//     testObj.push(info)
-//     console.log(testObj)
+$(`#searchBtn`).on(`click`,event => 
+{
+    event.preventDefault()
+    $(`#myDiv`).empty()
     
-}).catch(error => {console.log(error)})
+    let url = `https://images-api.nasa.gov/search?q=${$(`#inputBox`).val()}`
+    let req = new Request(url, {
+        method : `GET`,
+        data : {},
+        crossDomain : true,
+        mode : `cors`,
+        dataType : `html`
+    })
 
-// testObj = getData() || [1,2,3]
+    $(`#inputBox`).val("")
+    fetch(req)
+    .then(resp => resp.json())
+    .then(data => process(data))
+    .catch(err => console.log(err))
+}
+)
 
-// console.dir(testObj)
+
+let process = (data) =>
+{
+   
+         data.collection.items.forEach(function(user){
+        //  console.log(user.data)
+
+        
+        console.log(user)
+         user.data.forEach(function(items)
+         {
+             
+            //  console.log(items)
+            let newElem = document.createElement('div')
+            newElem.innerHTML = `  
+            <div class = "myDiv" >
+            <img src="${user.links[0].href}" alt="${user.links[0].render}">
+            <p>Tittle : ${items.title ||`N/A`}</p>
+            <p>Album : ${items.album || `N/A`}</p>
+            <p>Center : ${items.center ||`N/A`}</p>
+            <p>Date created: ${items.date_created ||`N/A`}</p>
+            <p>Location : ${items.location ||`N/A`}</p>
+            <p>Description : ${items.description ||`N/A`}</p>
+            <p>Photographer : ${items.photographer ||`N/A`}</p>
+            <p>Keywords : ${items.keywords ||`N/A`}</p>        
+            <br><br> 
+            </div>`
+
+            $('#myDiv').append(newElem)        
+           
+         })
+       
+            })
+}
