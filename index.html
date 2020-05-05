@@ -7,17 +7,45 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-</head>
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" /> -->
+  </head>
 
-<style>
- 
+<!-- <style>
+ @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+ body
+ {
+   /* background-color: rgb(8, 32, 32); */
+    /* background-image: url("./assets/image/space1.jpg"); */
+ }
   #new2
   {
-      background-color: black;
-      color: blanchedalmond;
+      /* background-color: black; */
+      
+  
   }
-</style>
+  #new2 h1{
+    font-family: "Open Sans", sans-serif;
+    color: rgb(160, 101, 13);
+  }
+
+  #demo-canvas
+  {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    position: fixed;
+    /* background-image: url("./assets/image/space1.jpg"); */
+  }
+
+</style> -->
+
   <body>
+
+    <div id="large-header" class="large-header">
+      <canvas id="demo-canvas">
+      </canvas>
+      </div>
 ​
     <!-- Start Top Bar -->
     <div class="top-bar">
@@ -42,7 +70,7 @@
       <div class="row column text-center new1">
         <h1>Space News</h1>
       </div>
-    </div>
+    
 ​
     <div class="row" id="content">
       <div class="medium-8 columns" id="content1">
@@ -88,37 +116,49 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 
-    <script>
+    <!-- Animate -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script src="./assets/script/animate.js"></script>
 
+    <script>
+let tags = []
            fetch('https://spaceflightnewsapi.net/api/v1/blogs?news_site=planetarysociety')
           .then(r => r.json())
           .then(data => {
-            console.log(data)
-            window.open(data.docs[0].links);
-            for(let i = 0;i< data.docs.length;i++)
-          {
-            let newElem = document.createElement('div')
-
-          newElem.innerHTML = 
-`
-           <div class="blog-post">
-          <h3 class="articleTitle">${data.docs[i].title}<small class="date"></small></h3>
-          <img class="thumbnail" src="${data.docs[i].featured_image}">
-          <p class=ArticleDes>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
-          <div class="callout">
-            <ul class="menu simple">
-              <li><a href="#">Author: Mike Mikers</a></li>
-              <li><a href="#">Comments: 3</a></li>
-            </ul>
-          </div>
-        </div>
-          `
-
-          document.getElementById('content1').append(newElem)
-          }
+            tagsSort(data)
+  
 
         }).catch(err => console.log(err))
 
+
+        let tagsSort = (data) =>
+        {
+          for(let o = 0; o < data.docs.length;o++)
+            {
+            for(let i = 0;i < data.docs[o].tags.length;i++)
+        
+          {
+            let tempIndex = tags.findIndex(tag => tag.tag === data.docs[o].tags[i])
+            console.log(data.docs[o].tags[i])
+            console.log(tempIndex)
+          if(tempIndex === -1)
+          {
+              let newObj = new Object()
+              newObj.tag = data.docs[o].tags[i]
+              newObj.count = 0
+              tags.push(newObj)
+          }
+          else
+          {
+            console.log("found")
+              tags[tempIndex].count++
+          }}
+        }
+        
+          
+          console.log(tags.sort(function(a,b){return b.count - a.count}))
+        }
     </script>
 
   </body>
