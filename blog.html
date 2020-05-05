@@ -1,0 +1,297 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel='stylesheet' href='app.css'>
+    <link rel='stylesheet' href='animatedspace.css'>
+  </head>
+  <body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">eSPACE</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="#">About</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">SpaceX</a></li>
+          <li><a href="#">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1>SpaceX</h1>
+      </div>
+    </div>
+    
+
+
+    <div class="row" id="content">
+      <div class="medium-8 columns">
+        <div id="blog-post1 info">
+          <h3>Company Information <small id='small1'>General Info About SpaceX</small></h3>
+          <img class="thumbnail" src="https://image.cnbcfm.com/api/v1/image/104740719-GettyImages-855370048-elon-musk.jpg?v=1558609014&w=1400&h=950">
+          <p id='info'></p>
+          <div class="callout">
+          </div>
+        </div>
+
+        <div class="blog-post2" id='history'>
+          <h3>History <small>All Historical Events of SpaceX</small></h3>
+          <img class="thumbnail" src="https://spacenews.com/wp-content/uploads/2020/04/hls-starship-879x485.jpg">
+          <p id='info2'>
+            <form>
+              <div class="form-group">
+                <label for="name">ID</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <button id="searchID" type="submit" class="btn btn-primary">Search Event ID</button>
+            </form>
+            <div id="events"></div>
+          </p>
+          <div class="callout">
+          </div>
+        </div>
+
+        <div class="blog-post3" id='launches'>
+          <h3>Launches <small>Launch payload orbits are updated hourly</small></h3>
+          <img class="thumbnail" src="https://www.nasa.gov/sites/default/files/thumbnails/image/42374725534_a653d1b7cb_k.jpg">
+          <p id='info3'>
+            <form>
+              <div class="form-group">
+                <label for="name2">Flight #</label>
+                <input type="text" class="form-control" id="name2">
+              </div>
+              <button id="searchFlight" type="submit" class="btn btn-primary">Search Flight #</button>
+            </form>
+            <div id="flights"></div>
+          </p>
+          <div class="callout">
+          </div>
+        </div>
+
+        <div class="blog-post5" id='dragon'>
+          <h3>Dragons <small>Info About SpaceX Dragons</small></h3>
+          <img class="thumbnail" src="https://www.spacex.com/sites/all/themes/spacex2012/images/dragon/slideshow/Dragon_Carousel_0007_2.jpg">
+          <p id='info5'>
+            <form>
+              <div class="form-group">
+                <label for="name5">Dragon #</label>
+                <input type="text" class="form-control" id="name5">
+              </div>
+              <button id="searchRocket" type="submit" class="btn btn-primary">Search Dragon #</button>
+            </form>
+            <div id="rockets"></div>
+          </p>
+          <div class="callout">
+          </div>
+        </div>
+
+        <div class="blog-post4" id='roadster'>
+          <h3>Roadster <small>Find Elon Musk's Roadster</small></h3>
+          <img class="thumbnail" src="https://cms.qz.com/wp-content/uploads/2018/02/tesla-spacex-starman-falcon-heavy-rocket-elon-musk.jpg?quality=75&strip=all&w=1600&h=900&crop=1">
+          <p id='info4'></p>
+          <div class="callout">
+          </div>
+        </div>
+      </div>
+
+      <div class="medium-3 columns" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#launches">Launches</a></li>
+            <li><a href="#dragon">Dragons</a></li>
+            <li><a href="#roadster">Roadster</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+
+     fetch('https://api.spacexdata.com/v3/info')
+      .then(r => r.json())
+      .then(data => {
+        console.log(data)
+        document.getElementById('info').innerHTML = `
+        <p>Summary: ${data.summary}</p>
+        </p>CEO: ${data.ceo}</p>
+        <p>COO: ${data.coo}</p>
+        <p>CTO: ${data.cto}</p>
+        <p># of Employees: ${data.employees}</p>
+        <p>Founded: ${data.founded}</p>
+        <p>Headquarters: ${data.headquarters.address}, ${data.headquarters.city}, ${data.headquarters.state}
+        `})
+    .catch(e => {console.log(e)})
+
+  
+  document.getElementById('searchID').addEventListener('click', event => {
+      event.preventDefault()
+
+      if (document.getElementById('name').value.length >= 1) {
+        fetch(`https://api.spacexdata.com/v3/history/${document.getElementById('name').value.toLowerCase()}/`)
+          .then(r => r.json())
+          .then(data => {
+            let eventElem = document.createElement('div')
+            eventElem.className = 'card'
+            eventElem.style = 'width: 18rem;'
+            eventElem.innerHTML = `
+          <div class="card-body">
+          <p></p>
+            <h5 class="card-title">
+              Title: ${data.title}
+            </h5>
+            <p>
+                Date: ${data.event_date_utc}
+            </p>
+            <p>
+                Flight #: ${data.flight_number}
+            </p>
+            <p>
+                Details: ${data.details}
+            </p>
+          </div>
+        `
+        
+            document.getElementById('name').value = ''
+            document.getElementById('events').innerHTML = ''
+            document.getElementById('events').append(eventElem)
+          })
+          .catch(e => {
+            console.log(e)
+            alert('Event not found')
+            document.getElementById('name').value = ''
+            document.getElementById('events').innerHTML = ''
+          })
+      }
+    })
+
+document.getElementById('searchFlight').addEventListener('click', event => {
+      event.preventDefault()
+
+      if (document.getElementById('name2').value.length >= 1) {
+        fetch(`https://api.spacexdata.com/v3/launches/${document.getElementById('name2').value.toLowerCase()}/`)
+          .then(r => r.json())
+          .then(data => {
+            let flightElem = document.createElement('div')
+            flightElem.className = 'card'
+            flightElem.style = 'width: 18rem;'
+            flightElem.innerHTML = `
+          <div class="card-body">
+          <p></p>
+            <h5 class="card-title">
+              Mission Name: ${data.mission_name}
+            </h5>
+            <p>
+                Launch Year: ${data.launch_year}
+            </p>
+            <p>
+                Rocket Name: ${data.rocket.rocket_id}
+            </p>
+            <p>
+                Rocket Type: ${data.rocket.rocket_type}
+            </p>
+          </div>
+        `
+        
+            document.getElementById('name2').value = ''
+            document.getElementById('flights').innerHTML = ''
+            document.getElementById('flights').append(flightElem)
+          })
+          .catch(e => {
+            console.log(e)
+            alert('Event not found')
+            document.getElementById('name2').value = ''
+            document.getElementById('flights').innerHTML = ''
+          })
+      }
+    })
+
+    document.getElementById('searchRocket').addEventListener('click', event => {
+      event.preventDefault()
+
+      if (document.getElementById('name5').value.length >= 1) {
+        fetch(`https://api.spacexdata.com/v3/dragons/dragon${document.getElementById('name5').value.toLowerCase()}/`)
+          .then(r => r.json())
+          .then(data => {
+            let rocketElem = document.createElement('div')
+            rocketElem.className = 'card'
+            rocketElem.style = 'width: 18rem;'
+            rocketElem.innerHTML = `
+          <div class="card-body">
+          <p></p>
+            <h5 class="card-title">
+              Name: ${data.name}
+            </h5>
+            <p>
+                Description: ${data.description}
+            </p>
+            <p>
+                First Flight: ${data.first_flight}
+            </p>
+            <p>
+                Orbit Duration: ${data.orbit_duration_yr} years
+            </p>
+            <p>
+                Launch Payload: ${data.launch_payload_mass.lb} lbs
+            </p>
+            <p>
+                Return Payload: ${data.return_payload_mass.lb} lbs
+          </div>
+        `
+        
+            document.getElementById('name5').value = ''
+            document.getElementById('rockets').innerHTML = ''
+            document.getElementById('rockets').append(rocketElem)
+          })
+          .catch(e => {
+            console.log(e)
+            alert('Event not found')
+            document.getElementById('name5').value = ''
+            document.getElementById('rockets').innerHTML = ''
+          })
+      }
+    })
+
+
+
+    fetch('https://api.spacexdata.com/v3/roadster')
+      .then(r => r.json())
+      .then(data => {
+        console.log(data)
+    document.getElementById('info4').innerHTML = `
+      <p>Name: ${data.name}</p>
+      <p>Details: ${data.details}</p>
+      <p>Launch Date: ${data.launch_date_utc}</p>
+      <p>Time in Orbit: ${data.period_days} days</p>
+      <p>Speed: ${data.speed_mph} mph</p>
+      <p>Distance from Earth: ${data.earth_distance_mi} miles</p>
+      <p>Distance from Mars: ${data.mars_distance_mi} miles</p>
+      `
+      })
+
+   
+</script>
+  </body>
+</html>
+
+
+
