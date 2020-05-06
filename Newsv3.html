@@ -75,7 +75,7 @@
     </div>
 ​
     <div class="row" id="content">
-      <div class="medium-8 columns" id="content1">
+      <div class="medium-8 columns" id="articles">
 
       </div>
 
@@ -84,12 +84,16 @@
         <div class="sticky" data-sticky data-anchor="content">
           <h4>Categories</h4>
           <ul>
-            <li><a href="#">All</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">Reports</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#reports">Reports</a></li>
           </ul>
         </div>
       </div>
+
+      <div class="row" id="content">
+        <div class="medium-8 columns" id="reports">
+      
+        </div>
       </div>
      
       <!-- <div class="medium-3 columns" data-sticky-container>
@@ -150,7 +154,7 @@
         </div>
           `
 
-          document.getElementById('content1').append(newElem)
+          document.getElementById('articles').append(newElem)
           }
 
         }).catch(err => console.log(err))
@@ -178,7 +182,7 @@
         </div>
           `
 
-              document.getElementById('content1').append(newElem)
+              document.getElementById('reports').append(newElem)
             }
 
           }).catch(err => console.log(err))
