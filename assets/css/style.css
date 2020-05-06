@@ -1,4 +1,7 @@
-
+html{
+    scroll-behavior: smooth;
+    transition-duration: 500ms;
+}
 body
 {
     background-color: rgb(0, 0, 0);
@@ -12,6 +15,7 @@ body
     grid-template-areas: 
     "jumbotron"
     "main";
+    
 }
 
 #jumbotron
