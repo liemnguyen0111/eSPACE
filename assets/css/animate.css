@@ -1,0 +1,64 @@
+
+
+ .large-header {
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 0;
+ }
+ 
+ .demo .large-header {
+   background-image: url("../image/touchingMars.jpg");
+ }
+ 
+ .main-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #F9F1E9;
+    text-align: center;
+    top: 50%;
+    left: 25%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    
+ }
+ 
+ .invisibleCircle
+ {
+    position:absolute;
+    width: 30%;
+    height: 35%;
+    border-radius: 50%;
+    padding: 50px;
+    margin: 20px;
+    color: #F9F1E9;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+ }
+ 
+ .demo .main-title {
+    font-size: 4.2em;
+    letter-spacing: 0.1em;
+ }
+ 
+ 
+ .demo .main-title a{
+    color: rgb(253, 253, 253);
+ }
+ 
+ .main-title .thin {
+    font-weight: 200;
+    
+ }
+ 
+ @media only screen and (max-width: 768px) {
+    .demo .main-title {
+       font-size: 2em;
+       
+    }
+ }
+ 

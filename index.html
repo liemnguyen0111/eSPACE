@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Foundation CSS library -->
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <!-- CSS for jumbotron -->
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <!-- Grid setup -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>eSPACE-Home-Page</title>
+</head>
+
+<body>
+    
+    <div id="wrapper">
+        <!-- Main home page/ Jumbotron -->
+        <div id="jumbotron">
+        <div class="container demo">
+            <div class="content">
+               <div id="large-header" class="large-header">
+                   <!-- create a animate canvas using ThreeJS -->
+                  <canvas id="demo-canvas"></canvas>    
+                  <h1 class="main-title" ><span class="thin" >Explore</span> eSPACE</h1>
+                <!-- A clickable invisible circle that lead to a home page -->
+                  <a href="#myNav">
+                  <div class ="invisibleCircle"></div>
+                </a>
+               </div>
+            </div>
+         </div>
+        </div>
+         <!-- End of main home page -->
+
+         <div id="main">
+            <nav class="myNav" id="myNav">
+                <div class="homePage"><a href="#">eSPACE</a></div>
+                <div>
+                    <ul>
+                      <li><a href="">About</a></li>
+                      <li><a href="">News</a></li>
+                      <li><a href="">SpaceX</a></li>
+                    </ul>
+                </div>
+        
+                
+                </nav>
+
+            <content class="content" id="content">content
+
+     <div class="row" id="content">
+        <div class="medium-8 columns">
+          <div id="blog-post1 info">
+            <h3>Company Information <small id='small1'>General Info About SpaceX</small></h3>
+            <img class="thumbnail" src="https://image.cnbcfm.com/api/v1/image/104740719-GettyImages-855370048-elon-musk.jpg?v=1558609014&w=1400&h=950">
+            <p id='info'></p>
+            <div class="callout">
+            </div>
+          </div>
+ 
+          <div class="blog-post2" id='history'>
+            <h3>History <small>All Historical Events of SpaceX</small></h3>
+            <img class="thumbnail" src="https://spacenews.com/wp-content/uploads/2020/04/hls-starship-879x485.jpg">
+            <p id='info2'>
+              <form>
+                <div class="form-group">
+                  <label for="name">ID</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <button id="searchID" type="submit" class="btn btn-primary">Search Event ID</button>
+              </form>
+              <div id="events"></div>
+            </p>
+            <div class="callout">
+            </div>
+          </div>
+ 
+          <div class="blog-post3" id='launches'>
+            <h3>Launches <small>Launch payload orbits are updated hourly</small></h3>
+            <img class="thumbnail" src="https://www.nasa.gov/sites/default/files/thumbnails/image/42374725534_a653d1b7cb_k.jpg">
+            <p id='info3'>
+              <form>
+                <div class="form-group">
+                  <label for="name2">Flight #</label>
+                  <input type="text" class="form-control" id="name2">
+                </div>
+                <button id="searchFlight" type="submit" class="btn btn-primary">Search Flight #</button>
+              </form>
+              <div id="flights"></div>
+            </p>
+            <div class="callout">
+            </div>
+          </div>
+ 
+          <div class="blog-post5" id='dragon'>
+            <h3>Dragons <small>Info About SpaceX Dragons</small></h3>
+            <img class="thumbnail" src="https://www.spacex.com/sites/all/themes/spacex2012/images/dragon/slideshow/Dragon_Carousel_0007_2.jpg">
+            <p id='info5'>
+              <form>
+                <div class="form-group">
+                  <label for="name5">Dragon #</label>
+                  <input type="text" class="form-control" id="name5">
+                </div>
+                <button id="searchRocket" type="submit" class="btn btn-primary">Search Dragon #</button>
+              </form>
+              <div id="rockets"></div>
+            </p>
+            <div class="callout">
+            </div>
+          </div>
+ 
+          <div class="blog-post4" id='roadster'>
+            <h3>Roadster <small>Find Elon Musk's Roadster</small></h3>
+            <img class="thumbnail" src="https://cms.qz.com/wp-content/uploads/2018/02/tesla-spacex-starman-falcon-heavy-rocket-elon-musk.jpg?quality=75&strip=all&w=1600&h=900&crop=1">
+            <p id='info4'></p>
+            <div class="callout">
+            </div>
+          </div>
+        </div>
+ 
+       
+      </div>
+ 
+            </content>
+            <aside class="side" id="side">side
+                <ul>
+                    <li><a href="#info">Info</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#launches">Launches</a></li>
+                    <li><a href="#dragon">Dragons</a></li>
+                    <li><a href="#roadster">Roadster</a></li>
+                  </ul>
+            </aside>
+            
+            <footer class="pageFooter" id="pageFooter"></footer>
+         </div>
+
+    </div>
+     <!-- Jquery -->
+     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <!-- Using for animation -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+
+    <!-- Foundation JS library -->
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+
+    <!-- local script using for animation -->
+    <script src="./assets/script/mainAnimate.js"></script>
+  
+    <!-- script -->
+    <script src="./assets/script/script.js"></script>
+
+</body>
+</html>
