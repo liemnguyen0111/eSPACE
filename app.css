@@ -38,8 +38,7 @@ hr {
 }
 
 pre {
-  font-family: 
-  font-size: 1em;
+  font-family: font-size: 1em;
 }
 
 a {
@@ -86,7 +85,7 @@ img {
 }
 
 button, input, optgroup, select, textarea {
-  font-family: inherit;
+  font-family: brandon-grotesque;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -194,7 +193,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: 'Brandon Grotesque', 'brandon-grotesque', Helvetica, sans-serif;
+  font-family: brandon-grotesque;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
