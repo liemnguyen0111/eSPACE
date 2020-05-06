@@ -42,6 +42,56 @@
     text-shadow: 1px 1px 2px #0a0a0a;
     font-family: Lato;
   }
+
+  .tag-cloud-section {
+  background: #7b93a4;
+  padding: 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tag-cloud-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #e6e6e6;
+  border-bottom: 1px solid #cacaca;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.tag-cloud {
+  margin: 1rem;
+  text-align: center;
+  list-style: none;
+}
+
+.tag-cloud .tag-cloud-individual-tag {
+  display: inline-block;
+  padding: 0.33333rem 0.5rem;
+  border-radius: 0;
+  font-size: 0.8rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+  border-radius: 5000px;
+  background: #2c3840;
+  display: inline-block;
+  color: #e6e6e6;
+  margin: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tag-cloud .tag-cloud-individual-tag .fa {
+  margin-left: 7px;
+  color: #e6e6e6;
+}
+
+.tag-cloud .tag-cloud-individual-tag:hover {
+  background: black;
+  transition: background-color .2s ease-in;
+}
 </style>
   <body>
 ​
@@ -87,16 +137,21 @@
           <h4>Categories</h4>
           <ul>
             <li><a href="#articles">Articles</a></li>
+            <li><a href="#blogs">Blogs</a></li>
             <li><a href="#reports">Reports</a></li>
           </ul>
         </div>
       </div>
 
       <div class="row" id="content">
+        <div class="medium-8 columns" id="blogs">
+      
+        </div>
+      <div class="row" id="content">
         <div class="medium-8 columns" id="reports">
       
         </div>
-      </div>
+      
      
       <!-- <div class="medium-3 columns" data-sticky-container>
         <div class="sticky" data-sticky data-anchor="content">
@@ -125,13 +180,15 @@
         <li><a href="#" aria-label="Next page">Next</a></li>
       </ul>
     </div>
+    </div>
 ​
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 
     <script>
 //fetch request for Articles - need to apply to articles category
-           fetch('https://spaceflightnewsapi.net/api/v1/blogs?news_site=planetarysociety')
+          //  fetch('https://spaceflightnewsapi.net/api/v1/blogs?news_site=planetarysociety')
+          fetch('https://spaceflightnewsapi.net/api/v1/articles')
           .then(r => r.json())
           .then(data => {
             console.log(data)
@@ -160,6 +217,38 @@
           }
 
         }).catch(err => console.log(err))
+
+
+  //  fetch('https://spaceflightnewsapi.net/api/v1/blogs?news_site=planetarysociety')
+  fetch('https://spaceflightnewsapi.net/api/v1/blogs')
+    .then(r => r.json())
+    .then(data => {
+      console.log(data)
+      window.open(data.docs[0].links);
+      for (let i = 0; i < data.docs.length; i++) {
+        let newElem = document.createElement('div')
+
+        newElem.innerHTML =
+          `
+           <div class="blog-post">
+          <h3 class="articleTitle">${data.docs[i].title}<small class="date"></small></h3>
+          <img class="thumbnail" src="${data.docs[i].featured_image}">
+          <div class="callout">
+            <ul class="menu simple">
+              <li><a>Date: ${data.docs[i].published_date.slice(0, 10)}</a></li>
+              <li><a>Tags: ${data.docs[i].tags}</a></li>
+              <li><a>Publication: ${data.docs[i].news_site_long}</a></li>
+            </ul>
+          </div>
+          <a class="button button-rounded-hover" href="${data.docs[i].url}" target="_blank">Read More</a>
+        </div>
+          `
+
+        document.getElementById('blogs').append(newElem)
+      }
+
+    }).catch(err => console.log(err))
+
 
         fetch('https://spaceflightnewsapi.net/api/v1/reports')
         .then(r => r.json())
