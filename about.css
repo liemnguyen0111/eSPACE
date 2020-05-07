@@ -13,141 +13,197 @@
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
-
-
-.timeline .timeline-item::after, .timeline .timeline-item::before {
-  clear: both;
-  content: '';
-  display: block;
-  width: 100%;
-}
-
-.timeline {
-  background: url("https://cdn.hipwallpaper.com/i/54/31/Iz5cKm.jpg") fixed;
-  margin: 30px auto;
-  padding: 0 10px;
-  position: relative;
-  transition: all 0.25s ease-in;
-  width: 100%;
-}
-
-.timeline::before {
-  background: #fefefe;
-  content: '';
-  height: 100%;
-  left: 50%;
-  position: absolute;
-  top: 0;
-  width: 3px;
-}
-
-.timeline::after {
-  clear: both;
-  content: '';
-  display: table;
-  width: 100%;
-}
-
-.timeline a {
-  color: #fefefe;
-  font-weight: bold;
-  transition: all 0.25s ease-in;
-}
-
-.timeline a:hover {
-  box-shadow: 0 1px 0px 0px #fefefe;
-  transition: all 0.25s ease-in;
-}
-
-.timeline .timeline-item {
-  margin-bottom: 50px;
-  position: relative;
-}
-
-.timeline .timeline-item .timeline-icon {
-  background: #fefefe;
-  border-radius: 50%;
-  height: 50px;
-  left: 50%;
-  margin-left: -23px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 50px;
-}
-
-.timeline .timeline-item .timeline-icon img,
-.timeline .timeline-item .timeline-icon svg {
-  left: 14px;
-  position: relative;
-  top: 11px;
-}
-
-.timeline .timeline-item .timeline-icon svg {
-  top: 14px;
-}
-
-.timeline .timeline-item .timeline-content {
-  padding: 20px;
-  text-align: right;
-  transition: all 0.25s ease-in;
-  width: 45%;
-  background: transparent;
-}
-
-.timeline .timeline-item .timeline-content p {
-  color: white;
-}
-
-.timeline .timeline-item .timeline-content p {
-  font-size: 16px;
-  line-height: 1.4;
-  margin-bottom: 0;
-}
-
-.timeline .timeline-item .timeline-content .timeline-content-date {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-.timeline .timeline-item .timeline-content .timeline-content-month {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-.timeline .timeline-item .timeline-content.right {
-  float: right;
-  text-align: left;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .timeline {
-    margin: 30px;
-    padding: 0;
-    width: 90%;
+.four-up-feature {
+    text-align: center;
   }
-  .timeline::before {
+  
+  .four-up-feature .four-up-feature-header {
+    margin-bottom: 3rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .four-up-feature .four-up-feature-image {
+    margin-bottom: 2rem;
+  }
+  
+  .four-up-feature .four-up-feature-text {
+    margin-bottom: 2rem;
+  }
+  
+  
+
+.marketing-site-features {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .marketing-site-features .fa {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1779ba;
+  }
+  
+  .marketing-site-features .marketing-site-features-title {
+    font-size: 1.125rem bold;
+    margin-bottom: 1rem;
+  }
+  
+  @media screen and (min-width: 40em) {
+    .marketing-site-features {
+      text-align: left;
+    }
+  }
+  
+  .marketing-site-features-headline {
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .marketing-site-features-subheadline {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  
+
+
+.large-article-header {
+    background: url("https://wallpaperscute.com/wp-content/uploads/2019/09/HD-Space-Backgrounds.jpg") center center fixed;
+    background-size: cover;
+    height: 31.25rem;
+    position: relative;
+  }
+  
+  .large-article-header2 {
+    background: url("https://wallpaperplay.com/walls/full/9/9/6/200803.jpg") center center fixed;
+    background-size: cover;
+    height: 31.25rem;
+    position: relative;
+  }
+
+  .large-article-header3 {
+    background: url("https://i.pinimg.com/originals/c6/1c/c3/c61cc37063af25905048710b258c5233.jpg") center center fixed;
+    background-size: cover;
+    height: 31.25rem;
+    position: relative;
+  }
+  
+
+  @media screen and (max-width: 39.9375em) {
+    .large-article-header, .large-article-header-content2, .large-article-header-content3 {
+      height: 20.83333rem;
+    }
+  }
+  
+  .large-article-header-content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    bottom: 3.125rem;
     left: 0;
+    right: 0;
   }
-  .timeline .timeline-item .timeline-content {
-    float: right;
-    text-align: left;
-    width: 90%;
+  
+  @media screen and (max-width: 39.9375em) {
+    .large-article-header-content, .large-article-header-content2, .large-article-header-content3 {
+      bottom: 1.25rem;
+    }
   }
-  .timeline .timeline-item .timeline-content::before, .timeline .timeline-item .timeline-content.right::before {
-    border-left: 0;
-    border-right: 7px solid #fefefe;
-    left: 10%;
-    margin-left: -6px;
+  
+  .large-article-header-content .center-container {
+    width: 50%;
+    margin: 0 auto;
   }
-  .timeline .timeline-item .timeline-icon {
-    left: 0;
+  
+  @media screen and (max-width: 39.9375em) {
+    .large-article-header-content .center-container {
+      width: 100%;
+      padding: 0 1.25rem;
+    }
   }
-}
+  
+  .large-article-header-content .article-date {
+    color: #fefefe;
+  }
+  
+  .large-article-header-content .article-title h1 {
+    line-height: 3.125rem;
+    color: #fefefe;
+    font-weight: 600;
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .large-article-header-content .article-title h1 {
+      line-height: 1.875rem;
+    }
+  }
+  
+  .large-article-header-content .article-details {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .large-article-header-content .article-details a {
+    color: #fefefe;
+  }
+  
+  .large-article-header-content .article-author {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 1rem 0;
+  }
+  
+  .large-article-header-content .article-author img {
+    border-radius: 3.125rem;
+  }
+  
+  .large-article-header-content .article-author a {
+    margin-left: 1rem;
+  }
+  
+  
 
 
+
+.hero-section {
+    background: url("https://wallpaperaccess.com/full/44279.jpg") 50% no-repeat;
+    background-size: cover;
+    height: 60vh;
+    text-align: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .hero-section .hero-section-text {
+    color: #fefefe;
+    text-shadow: 1px 1px 2px #0a0a0a;
+  }
+  
+  
 
 
 .hero-full-screen {
@@ -164,7 +220,7 @@
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: url("https://wallpaperplay.com/walls/full/2/5/0/200799.jpg") center center fixed;
+  background: url("https://wallpapermemory.com/uploads/577/cool-space-background-hd-1366x768-398544.jpg") center center fixed;
   background-size: cover;
 }
 
