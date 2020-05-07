@@ -19,7 +19,7 @@
       background-color: black;
       color: white;
   } */
-
+/* 
    .hero-section {
     background: url("https://spacenews.com/wp-content/uploads/2018/05/24359364107_152b0152ff_k.jpg") 50% no-repeat;
     background-size: cover;
@@ -42,7 +42,7 @@
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
     font-family: Lato;
-  }
+  } */
 
   .tag-cloud-section {
   background: #7b93a4;
@@ -95,24 +95,39 @@
 }
 </style>
   <body>
-​
-    <!-- Start Top Bar -->
+<!-- ​Nav Top Bar -->
+<div class="hero-full-screen">
+
+  <div class="top-content-section">
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text">eSPACE</li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li class="navItem"><a href="#">Home</a></li>
-          <li class="navItem"><a href="#">About</a></li>
-          <li class="navItem"><a href="#">Media</a></li>
-          <li class="navItem"><a href="#">News</a></li>
-          <li class="navItem"><a href="#">SpaceX</a></li>
+          <li class="menu-text">
+            <h3>eSPACE</h3>
+          </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">SpaceX</a></li>
+          <li><a href="#">News</a></li>
         </ul>
       </div>
     </div>
+  </div>
+
+  <div class="middle-content-section">
+    <h1>eSPACE News</h1>
+  </div>
+
+  <div class="bottom-content-section" data-magellan data-threshold="0">
+    <a href="#main-content-section"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z" />
+        </svg></a>
+  </div>
+
+</div>
+
+<div id="main-content-section" data-magellan-target="main-content-section">
     <!-- End Top Bar -->
 ​
     <!-- <div class="callout large primary" id ="new2">
@@ -120,12 +135,12 @@
         <h1>Space News</h1>
       </div>
     </div> -->
-    <div class="hero-section">
+    <!-- <div class="hero-section">
       <div class="hero-section-text">
         <h1>eSPACE News</h1>
         <h5>The latest news in Space</h5>
       </div>
-    </div>
+    </div> -->
 ​
     <div class="row" id="content">
       <div class="medium-8 columns" id="articles">
@@ -264,7 +279,7 @@
           <div class="callout">
             <ul class="menu simple">
               <li><a>Date: ${data.docs[i].published_date.slice(0, 10)}</a></li>
-              <li><a>Tags: ${data.docs[i].summary}</a></li>
+              <li><a>Summary: ${data.docs[i].summary}</a></li>
               <li><a>Publication: ${data.docs[i].news_site_long}</a></li>
             </ul>
           </div>
