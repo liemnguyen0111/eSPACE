@@ -17,7 +17,7 @@
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: url("https://wallpaperplay.com/walls/full/2/5/0/200799.jpg%22") center center fixed;
+  background: url("https://wallpaperplay.com/walls/full/2/5/0/200799.jpg") center center fixed;
   background-size: cover;
 }
 .hero-full-screen .middle-content-section {
@@ -63,5 +63,81 @@
 .hero-full-screen .top-bar .menu a {
   color: #fefefe;
   font-weight: bold;
+}
+
+.heroImage {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  
+  border: 4px solid rgb(0, 0, 0);
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
+          box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
+  line-height: 0; }
+
+  /*Container for Image and Text side by side*/
+  .sideLeftColumn {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Clear floats after image containers */
+  .sideLeftRow::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .sideRightColumn {
+    float: right;
+    width: 50%;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Clear floats after image containers */
+  .sideRightRow::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .missionStatement {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #8a8a8a; }
+
+    .topHeader {
+      margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: normal;
+      font-size: 100px;
+      line-height: 1.4;
+      color: #ececec; }
+
+@media screen and (max-width: 500px) {
+  .sideLeftColumn , .sideRightColumn {
+    width: 100%;
+  }
+}
+
+
+  /* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+  #primary { width:67%; }
+  #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+  #primary { width:100%; }
+  #secondary { width:100%; margin:0; border:none; }
 }
 
