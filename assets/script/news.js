@@ -19,7 +19,7 @@
               <li><a>Publication: ${data.docs[i].news_site_long}</a></li>
             </ul>
           </div>
-          <a class="button button-rounded-hover" href="${data.docs[i].url}" target="_blank">Read More</a>
+          <a class="readMore button button-rounded-hover" data-url="${data.docs[i].url}"">Read More</a>
         </div>
           `
 
@@ -48,7 +48,7 @@
               <li><a>Publication: ${data.docs[i].news_site_long}</a></li>
             </ul>
           </div>
-          <a class="button button-rounded-hover" href="${data.docs[i].url}" target="_blank">Read More</a>
+          <a class="readMore button button-rounded-hover" data-url="${data.docs[i].url}">Read More</a>
         </div>
           `
 
@@ -77,13 +77,53 @@
               <li><a>Publication: ${data.docs[i].news_site_long}</a></li>
             </ul>
           </div>
-          <a class="button button-rounded-hover" href="${data.docs[i].url}" target="_blank">Read More</a>
+          <a class="readMore button button-rounded-hover" href="${data.docs[i].url}" target="_blank">Read More</a>
         </div>
           `
-
+           
               document.getElementById('reports').append(newElem)
             }
 
           }).catch(err => console.log(err))
 
+let open = false
+          $(this).on("click",event =>
+          {
+            console.log(event)
+         
+              let url = event.target.dataset.url
+      
+              console.log(url)
+                 if(event.target.className.split(" ")[0] === "readMore" && !open)
+               {
+                 try
+                 {
+                 console.log("click")
+                 let newFrame = document.createElement("div")
+                 newFrame.innerHTML = `  
+                 <iframe id ="iframe-id"  frameborder="0"  src="${url}"></iframe>`
+                 $(`#content`).append(newFrame)
+                //  document.getElementById("iframe-id").style.transition = "500ms"
+                //  document.getElementById("iframe-id").style.height = 800
+                //   document.getElementById("iframe-id").style.opacity = "1"
+                  
+               
+                open = true
+                 }
+                 catch(err){console.log(err)}
+               }
+               else
+               {
+                 open = false
+                 let iframe=document.getElementById("iframe-id");
+                     document.getElementById("iframe-id").style.transition = "500ms"
+                     document.getElementById("iframe-id").style.height = 0
+                      document.getElementById("iframe-id").style.opacity = "1"
+                    setTimeout(() => {
+                      iframe.parentNode.removeChild(iframe);
+                    }, 2000);
+               }
+      
+          })
 
+   

@@ -66,6 +66,8 @@
        font-size: 2em;
     }
 
+      
+
     .maintitle {
         position: absolute;
         margin: 0;
@@ -78,8 +80,7 @@
         transform: translate3d(-50%, -50%, 0);
         
      }
-
- }
+   }
 
  .categories a
  {
@@ -115,8 +116,3 @@
     background: black;
   }
 
-  #categories
-  {
-      position: sticky;
-      top: 0;
-  }
