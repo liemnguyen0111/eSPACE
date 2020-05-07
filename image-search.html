@@ -4,10 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home-Page</title>
+           <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel='stylesheet' href='./assets/css/style.css'>
     <link rel="stylesheet" href="./assets/css/search.css">
+    <link rel="stylesheet" href="./assets/css/animate.scss">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   </head>
+
+  <style>
+
+  </style>
   <body>
     
         <!-- Start Top Bar -->
@@ -27,11 +38,7 @@
           </div>
         </div>
       
-        <div class="middle-content-section">
-          <h1>Image Search</h1>
-          <a href='#main-content-section'><button class="button large">Image Search</button></a>
-
-        </div>
+        <div class="middle-content-section"> <h1>Image Search</h1>  </div>
       
         <div class="bottom-content-section" data-magellan data-threshold="0">
           <a href="#main-content-section"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z"/></svg></a>
@@ -39,16 +46,25 @@
       
       </div>
       
+      <!--  -->
       <div id="main-content-section" data-magellan-target="main-content-section">
   
-        <br>
-      <div class="row" id="content">
-        <div class="medium-8 columns">
-          
-  
-     
-      </div>
-    </div>
+       
+         
+            <div class="input-field" id="searchBar">
+             
+              <i class="material-icons prefix"><a href="#" alt="searchBtn" style ="text-decoration: none;">search</a></i>
+              <input type="text" id="autocomplete-input" class="autocomplete">
+              <label for="autocomplete-input">Search</label>
+         
+            </div>   
+           <a href="#main-content-section"> <button id="back-to-top" class ="waves-effect  btn" >back to top</button></a>
+           <br></br>
+           <div id="content"></div>
+       
+      
+
+  </div>
 
     
         
@@ -59,8 +75,12 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 
-    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+               
+  <script src="./assets/script/imageSearch.js"></script>
 
   </body>
 </html>
