@@ -32,7 +32,7 @@
 {
 
 .hero-full-screen {
-    background: url("../image/spaceX.jpg") center center fixed;
+    background: url("../image/spaceX-small.jpg") center center fixed;
     height: 100vh;
     display: -webkit-flex;
     display: -ms-flexbox;
