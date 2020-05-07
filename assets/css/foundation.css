@@ -586,36 +586,56 @@ h6, .h6 {
     color: #cacaca; }
 
 h1, .h1 {
-  font-size: 1.5rem;
+  font-family: brandon-grotesque,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h2, .h2 {
-  font-size: 1.25rem;
+  font-family: brandon-grotesque,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.35rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  color: rgb(137, 172, 133); }
 
 h3, .h3 {
-  font-size: 1.1875rem;
+  font-family: brandon-grotesque,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.15rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  color: rgb(137, 172, 133); }
 
 h4, .h4 {
+  font-family: brandon-grotesque,sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 1.125rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h5, .h5 {
+  font-family: brandon-grotesque,sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 1.0625rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h6, .h6 {
+  font-family: brandon-grotesque,sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 1rem;
   line-height: 1.4;
   margin-top: 0;
@@ -3183,27 +3203,30 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   padding: 1rem;
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
-  background-color: white;
-  color: #0a0a0a; }
+  background-color: black;
+  color: whitesmoke; }
   .callout > :first-child {
     margin-top: 0; }
   .callout > :last-child {
     margin-bottom: 0; }
   .callout.primary {
-    background-color: #d7ecfa;
-    color: #0a0a0a; }
+    font-family: brandon-grotesque,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: black;
+    color: whitesmoke; }
   .callout.secondary {
     background-color: #eaeaea;
-    color: #0a0a0a; }
+    color: whitesmoke; }
   .callout.success {
     background-color: #e1faea;
-    color: #0a0a0a; }
+    color: whitesmoke; }
   .callout.warning {
     background-color: #fff3d9;
-    color: #0a0a0a; }
+    color: whitesmoke; }
   .callout.alert {
     background-color: #f7e4e1;
-    color: #0a0a0a; }
+    color: whitesmoke; }
   .callout.small {
     padding-top: 0.5rem;
     padding-right: 0.5rem;
