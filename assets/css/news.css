@@ -16,6 +16,7 @@
             justify-content: space-between;
     background-size: cover;
   }
+  .svg .hero-full-screen {background: url("../image/planet.jpg");}
 
 @media only screen and (min-width : 800px)
 {.categories
@@ -28,16 +29,17 @@
 {
     background-color: rgb(199, 199, 199);
     width: 1000px;
-    height: 900px;
+    height: 800px;
     margin-top: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     position: sticky;
     bottom: 0;
     z-index: 11;
 }
 
 }
-#iframe-id
+@media only screen and (max-width : 800px)
+{#iframe-id
 {
     background-color: rgb(199, 199, 199);
     width: 100%;
@@ -47,4 +49,5 @@
     position: sticky;
     bottom: 0;
     z-index: 11;
+}
 }

@@ -16,3 +16,5 @@
             justify-content: space-between;
     background-size: cover;
   }
+
+  .svg .hero-full-screen {background: url("../image/ASC.jpg");}

@@ -117,6 +117,7 @@ let open = false
                  open = false
                  let iframe=document.getElementById("iframe-id");
                      document.getElementById("iframe-id").style.transition = "500ms"
+                     document.getElementById("iframe-id").style.bottom = 0
                      document.getElementById("iframe-id").style.height = 0
                       document.getElementById("iframe-id").style.opacity = "1"
                     setTimeout(() => {
