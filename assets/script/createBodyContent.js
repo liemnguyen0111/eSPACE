@@ -57,7 +57,7 @@ let addHomePage = () =>
                   <canvas id="democanvas"></canvas>    
                   <h1 class="maintitle" ><span class="thin" >Explore</span> eSPACE</h1>
                 <!-- A clickable invisible circle that lead to a home page -->
-                  <a href="#">
+                  <a href="spaceX.html">
                   <div class ="invisibleCircle"></div>
                 </a>
                </div>
